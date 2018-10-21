@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/example', function () {
+    return 'hello there!';
+});
+
+Route::get('/books', 'BookController@index');
+
+Route::get('/books/{title}', 'BookController@show');
+
+Route::get('/practice', 'PracticeController@practiceX');
+
+
