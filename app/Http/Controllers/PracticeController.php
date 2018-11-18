@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 use IanLChapman\PigLatinTranslator\Parser;
+use App\Book;
 
 class PracticeController extends Controller
 {
@@ -15,11 +16,12 @@ class PracticeController extends Controller
         return 'Here are all the books...';
     }
 
+
+
     public function practiceX()
     {
-        $translator = new Parser();
-        $translation = $translator->translate('Hello world!');
-        dump($translation);
+        $result = Book::where('author', '=', 'J.K. Rowling')->delete();
+        dump($result);
     }
 
 }

@@ -14,8 +14,9 @@ class BookController extends Controller
         return 'Here are all the books...';
     }
 
-    public function show($title = null)
+   public function show($title = null)
     {
+        dump($title);
         return view('books.show')->with(['title' => $title]);
     }
 }
